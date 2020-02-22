@@ -69,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                int hours =  seconds/3600;
-                int minutes = (seconds%3600)/60;
-                int second = seconds%60;
+                int second = (seconds)%60;
+                int minutes = (seconds/60)%60;
+                int hours =  (seconds/3600)%60;
                 String time_format = String.format(Locale.getDefault(),"%02d:%02d:%02d",hours,minutes,second);
                 timer.setText(time_format);
                 if (running){
